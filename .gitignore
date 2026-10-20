@@ -218,3 +218,16 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Raw Bluebikes trips: 37-134 MB per month, over GitHub's 100 MB file limit.
+# Rebuild with: notebooks/00_download_trips.ipynb
+data/raw/bluebikes/
+
+# Clean trip-level files, also large. Rebuild with: notebooks/01_clean_data.ipynb
+data/interim/
+
+# Python and Jupyter clutter
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store

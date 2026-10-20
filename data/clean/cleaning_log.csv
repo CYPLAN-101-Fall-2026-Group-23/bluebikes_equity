@@ -1,0 +1,14 @@
+file,rows_in,no_start_station,under_1_min,over_24_hours,outside_study_year,in_previous_file,rows_out
+202401-bluebikes-tripdata.csv,166699,141,2259,166,0,0,164133
+202402-bluebikes-tripdata.csv,231947,294,2521,191,0,0,228941
+202403-bluebikes-tripdata.csv,261687,38,2930,211,0,0,258508
+202404-bluebikes-tripdata.csv,356327,65,4388,288,0,0,351586
+202405-bluebikes-tripdata.csv,440534,34,5338,352,0,0,434810
+202406-bluebikes-tripdata.csv,478860,40,0,500,0,123,478197
+202407-bluebikes-tripdata.csv,542622,91,0,515,0,0,542016
+202408-bluebikes-tripdata.csv,538262,184,0,417,0,0,537661
+202409-bluebikes-tripdata.csv,582679,165,0,417,0,0,582097
+202410-bluebikes-tripdata.csv,564156,178,0,325,0,0,563653
+202411-bluebikes-tripdata.csv,397406,112,37,201,0,0,397056
+202412-bluebikes-tripdata.csv,190611,93,0,119,0,0,190399
+all files,4751790,1435,17473,3702,0,123,4729057
