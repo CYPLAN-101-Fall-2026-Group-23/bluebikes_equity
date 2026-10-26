@@ -231,3 +231,6 @@ data/interim/
 __pycache__/
 .ipynb_checkpoints/
 .DS_Store
+
+# Local folders created by the Claude Code assistant (worktrees, settings); not project files
+.claude/
