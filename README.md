@@ -55,9 +55,8 @@ bluebikes-equity/
 ├── README.md
 ├── requirements.txt              exact package versions
 ├── .gitignore                    keeps the large files off GitHub
-├── notebooks/
-│   ├── 00_download_trips.ipynb   downloads the 2024 trip files
-│   └── 01_clean_data.ipynb       raw files in, clean tables out
+├── notebooks/                    download, clean, and analysis notebooks (see below)
+├── Visualizations/               saved figures from the analysis notebooks
 └── data/
     ├── raw/
     │   ├── bluebikes/            NOT on GitHub: 12 monthly trip CSVs (made by notebook 00)
@@ -68,6 +67,26 @@ bluebikes-equity/
 ```
 
 The raw trip files are 37 to 134 MB each, and GitHub refuses files over 100 MB. The clean trip files in `data/interim/` are also large. Both are listed in `.gitignore` and rebuilt by the notebooks. The census and boundary files are small (about 1 MB together), so they are stored in the repository and never need downloading. Everything in `data/clean/` adds up to under 1 MB.
+
+---
+
+## Notebooks
+
+Run `00` and `01` first so the cleaned tables exist. Notebooks `02`–`06` are the analysis and figure notebooks; save their plots into `Visualizations/` if you want static copies for the write-up.
+
+**`00_download_trips.ipynb`** downloads the twelve monthly 2024 Bluebikes trip files into `data/raw/bluebikes/`. It skips files that are already present, so it is safe to re-run. It produces no figures.
+
+**`01_clean_data.ipynb`** cleans the raw trips, joins stations to Boston census tracts and ACS income, and writes the tables in `data/clean/`. It is the pipeline notebook, not a chart notebook. See [How the cleaning notebook works](#how-the-cleaning-notebook-works) for the full steps.
+
+**`02_visualizing_stations.ipynb`** maps Bluebikes stations onto Boston census tracts. One map shows station locations alone; another overlays them on a choropleth of tract median household income; a third sizes or colors stations by how many trips they started in 2024 (including a log-scaled version so busy downtown stations do not wash out quieter ones).
+
+**`03_visualizing_trip_statistics.ipynb`** measures straight-line start-to-end distance for trips (projected to Massachusetts Mainland feet). It produces a histogram of those distances so you can see how short most rides are and where the long tail sits.
+
+**`04_time_of_day.ipynb`** looks at when people ride. One histogram shows trips by hour of day for Boston starts in 2024; a second compares average trips per hour on weekdays versus weekends, so commute peaks and weekend patterns are easier to tell apart.
+
+**`05_membership_vs_time.ipynb`** splits the same hourly pattern by membership type. It overlays member and casual trip starts by hour to show whether pass holders and pay-per-ride users concentrate at different times of day.
+
+**`06_income_vs_usage.ipynb`** asks whether busier stations sit in higher-income neighborhoods. Each point is a Boston station: total trips started in 2024 on the x-axis, and the median household income of its census tract on the y-axis.
 
 ---
 
